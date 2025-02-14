@@ -67,7 +67,6 @@ func (e *Evaluator) evaluateCondition(condition string) (bool, error) {
 	}
 
 	transformed := e.transformCondition(condition)
-	fmt.Println(condition)
 	expression, err := govaluate.NewEvaluableExpressionWithFunctions(transformed, e.getFunctions())
 	if err != nil {
 		return false, fmt.Errorf("failed to parse condition: %w", err)

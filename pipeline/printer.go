@@ -2,6 +2,9 @@ package pipeline
 
 import (
 	"fmt"
+	"os"
+
+	"gopkg.in/yaml.v3"
 )
 
 func PrintResults(results map[string][]JobResult, stageOrder []string, showScripts bool) {
@@ -25,6 +28,14 @@ func PrintResults(results map[string][]JobResult, stageOrder []string, showScrip
 				fmt.Println()
 			}
 		}
+	}
+}
+
+func PrintExpandedYAML(root *yaml.Node) {
+	encoder := yaml.NewEncoder(os.Stdout)
+	encoder.SetIndent(2)
+	if err := encoder.Encode(root); err != nil {
+		panic(err)
 	}
 }
 

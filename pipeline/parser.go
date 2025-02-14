@@ -6,6 +6,11 @@ import (
 	"gopkg.in/yaml.v3"
 )
 
+func ExpandYAML(data []byte) *yaml.Node {
+	root := expandYAML(data)
+	return root
+}
+
 func expandYAML(data []byte) *yaml.Node {
 	var root yaml.Node
 	if err := yaml.Unmarshal(data, &root); err != nil {

@@ -71,11 +71,13 @@ make build
 ```
 
 
-## Advanced Options ⚙️
+## CLI Options ⚙️
 
 | Flag | Description |
 |-----------|-----------------------------------|
 | `-show-scripts`    | Display scripts for matching jobs               |
+| `-expand-only`    | Output expanded YAML without simulating a pipeline |
+| `-h -help`    | Prints CLI options and examples |
 
 
 ## Current Limitations ⚠️
