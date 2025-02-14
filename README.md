@@ -33,12 +33,14 @@ $ ./glps .gitlab-ci.yml CI_COMMIT_BRANCH=master
 ## Installation 📦
 
 ### Binary Downloads
-Get pre-built binaries from Releases page
+Get pre-built binaries from  [Releases page](https://github.com/sanchezpaco/gitlab-pipeline-simulator/releases)
 
 ### From Source
 
+## Releases
+
 ```bash
-git clone https://github.com/yourusername/gitlab-pipeline-simulator
+git clone https://github.com/sanchezpaco/gitlab-pipeline-simulator
 cd gitlab-pipeline-simulator
 make build 
 ``` 
