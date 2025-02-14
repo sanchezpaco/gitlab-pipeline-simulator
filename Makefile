@@ -1,6 +1,6 @@
 BINARY_NAME = glps 
 GO_FILES = $(shell find . -type f -name '*.go')
-VERSION = $(shell git describe --tags --always --dirty)
+VERSION=$(shell cat .semver | tr -d '[:space:]')
 
 .PHONY: all build test lint clean run
 
@@ -13,3 +13,13 @@ build: $(GO_FILES)
 test:
 	@echo "Running tests..."
 	@go test -v -coverprofile=coverage.out ./...
+
+
+.PHONY: tag
+tag:
+	@if [ ! -f .semver ]; then \
+		echo "Error: .semver file not found!" >&2; \
+		exit 1; \
+	fi
+	git tag -a "v$(VERSION)" -m "Release v$(VERSION)"
+	git push origin "v$(VERSION)"
